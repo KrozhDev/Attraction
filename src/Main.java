@@ -26,19 +26,19 @@ public class Main {
 
         List<Person> clients = generateClients();
         for (Person client: clients) {
-            System.out.println(client.name + " " + client.surname + " владеет билетами в количестве " + client.numOfTickets);
+            System.out.println(client.getName() + " " + client.getSurname() + " владеет билетами в количестве " + client.getNumOfTickets());
         }
 
         Queue<Person> queue = new LinkedList<>(clients);
 
         while (!queue.isEmpty()) {
             Person person = queue.peek();
-            if (person.numOfTickets == 0) {
+            if (person.getNumOfTickets() == 0) {
                 queue.remove();
             } else {
                 person = queue.poll();
-                System.out.println("Посетитель" + person.name + " " + person.surname + " прокатился на аттракционе");
-                person.numOfTickets--;
+                System.out.println("Посетитель " + person.getName() + " " + person.getSurname() + " прокатился на аттракционе");
+                person.useOneTicket();
                 queue.add(person);
             }
         }

@@ -1,11 +1,28 @@
 public class Person {
 
-    public String name;
-    public String surname;
-    public int numOfTickets;
-    Person(String name, String surname, int numOfTickets) {
+    private String name;
+    private String surname;
+    private int numOfTickets;
+
+    public Person(String name, String surname, int numOfTickets) {
         this.name = name;
         this.surname = surname;
         this.numOfTickets = numOfTickets;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSurname() {
+        return this.surname;
+    }
+
+    public int getNumOfTickets() {
+        return  this.numOfTickets;
+    }
+
+    public void useOneTicket() {
+        this.numOfTickets--;
     }
 }
